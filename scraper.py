@@ -28,7 +28,7 @@ search_input.send_keys("Hollie Gallagher")
 search_button = browser.find_element(By.CSS_SELECTOR, ".input-row div button").click()
 
 #array of files that return from search result
-files = browser.find_elements(By.CSS_SELECTOR, ".table-striped tbody tr td input")
+files = browser.find_elements(By.CSS_SELECTOR, ".btn-primary-outline")
 
 #download files from files[]
 browser.execute_script("window.scrollTo(0, 35)")
