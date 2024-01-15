@@ -3,7 +3,7 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-
+import csv
 
 url = 'https://boe.cuyahogacounty.gov/candidates/campaign-finance-reports/Index'
 
@@ -35,7 +35,6 @@ browser.execute_script("window.scrollTo(0, 35)")
 for file in files:
     x = file.location.get('x')
     y = file.location.get('y')
-    print(y)
     # scroll down page a bit so the next file in the results is within page view
     browser.execute_script("window.scrollBy(0, 45)")
     time.sleep(.5)
