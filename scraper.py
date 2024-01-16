@@ -33,9 +33,16 @@ files = browser.find_elements(By.CSS_SELECTOR, ".btn-primary-outline")
 #download files from files[]
 browser.execute_script("window.scrollTo(0, 35)")
 for file in files:
-    x = file.location.get('x')
-    y = file.location.get('y')
+    #get the file text and file id
+    file_name = file.get_attribute("value")
+    file_id = file.get_attribute("id")
+    
+    #append file text and file id to csv file
+    with open('file.csv', "a", newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow([file_name, file_id])
+    
     # scroll down page a bit so the next file in the results is within page view
     browser.execute_script("window.scrollBy(0, 45)")
     time.sleep(.5)
-    file.click()
+    #file.click()
