@@ -46,3 +46,4 @@ for file in files:
     browser.execute_script("window.scrollBy(0, 45)")
     time.sleep(.5)
     #file.click()
+browser.quit()
